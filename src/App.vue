@@ -1,3 +1,4 @@
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import Board from './components/Board.vue'
@@ -54,7 +55,7 @@ function cancelDelete() {
 <template>
   <h1>Kanban Lite</h1>
 
-  <button @click="openNew">+ Add task</button>
+  <button class="add" @click="openNew">+ Add task</button>
   <FilterBar />
   <Board @edit="editTask"  @delete="askDelete"/>
 
@@ -63,13 +64,6 @@ function cancelDelete() {
     :task="editingTask"
     @close="showForm = false"
     @save="save"
-  />
-
-  <ConfirmDialog
-    :modelValue="confirmDeleteId !== null"
-    :taskId="confirmDeleteId"
-    @close="cancelDelete"
-    @save="confirmDelete"
   />
 
   <div v-if="confirmDeleteId" class="modal">

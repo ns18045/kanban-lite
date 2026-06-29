@@ -1,3 +1,5 @@
+
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -324,6 +326,7 @@ button {
   cursor: pointer;
   background: #e5e7eb;
   transition: 0.2s;
+  margin:0 4px
 }
 
 button:hover {
@@ -337,9 +340,10 @@ button:disabled {
 
 /* ADD BUTTON */
 button.add {
-  margin: 0 16px 10px;
+  margin: 0 16px 12px;
   background: #2563eb;
   color: white;
+  width: 5rem;
 }
 
 button.add:hover {
@@ -350,7 +354,7 @@ button.add:hover {
 .filters {
   display: flex;
   gap: 10px;
-  padding: 0 16px 12px;
+  padding: 10px 16px 12px;
 }
 
 .filters input,
@@ -360,6 +364,7 @@ button.add:hover {
   border-radius: 8px;
   outline: none;
   background: white;
+  width: 100%;
 }
 
 /* BOARD */
@@ -374,6 +379,30 @@ button.add:hover {
 .column {
   flex: 1;
   background: #f1f5f9;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 400px;
+}
+
+.column.todo {
+  flex: 1;
+  background: #d2e1f0;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 400px;
+}
+
+.column.in-progress {
+  flex: 1;
+  background: #ffd7b7;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 400px;
+}
+
+.column.done {
+  flex: 1;
+  background: #c7ffc7;
   border-radius: 12px;
   padding: 12px;
   min-height: 400px;
@@ -415,7 +444,28 @@ button.add:hover {
 .actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: 10px;
+}
+
+.actions button {
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: #f3f4f6;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.actions button:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.actions button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
 }
 
 /* MODAL */

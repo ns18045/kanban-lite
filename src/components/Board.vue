@@ -25,7 +25,7 @@ defineEmits<{
 
 <template>
     <div class="board">
-        <div class="column">
+        <div class="column todo">
             <h2>Todo</h2>
             <TaskCard
                 v-for="task in todoTasks"
@@ -36,7 +36,7 @@ defineEmits<{
             />
         </div>
 
-        <div class="column">
+        <div class="column in-progress">
             <h2>In Progress</h2>
             <TaskCard
                 v-for="task in inProgressTasks"
@@ -47,7 +47,7 @@ defineEmits<{
             />
         </div>
 
-        <div class="column">
+        <div class="column done">
             <h2>Done</h2>
             <TaskCard
                 v-for="task in doneTasks"
